@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Esta cumpliendo anyos?</title>
+    <style>
+        body {
+            background-color: #ffcce6;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        h1 {
+            color: #ff69b4;
+        }
+
+        button {
+            background-color: #ff69b4;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff3399;
+        }
+    </style>
+</head>
+<body>
+    <!-- Página 1 -->
+    <div id="page1" class="page">
+        <h1>Esta cumpliendo anyos?</h1>
+        <button onclick="showPage('page2')">Si</button>
+        <button>No</button>
+    </div>
+
+    <!-- Página 2 (video incrustado) -->
+    <div id="page2" class="page">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/cby2s_exPJs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <h1>Quieres tu regalo?</h1>
+        <button onclick="showPage('page3')">Si</button>
+        <button>No</button>
+    </div>
+
+    <!-- Página 3 (regalo) -->
+    <div id="page3" class="page">
+        <h1>Aqui esta tu regalo!</h1>
+        <h2>Codigo del juego: 0LREB-5E8Y2-53FZ7</h2>
+        <p>Si no sabes como canjearlo, aqui esta un video:</p>
+        <a href="https://www.youtube.com/watch?v=docdesqaBCQ&t=84s" target="_blank">Video de Instrucciones</a>
+        <h1>Quieres ver tu segundo regalo?</h1>
+        <button onclick="showPage('page4')">Si</button>
+        <button>No</button>
+    </div>
+
+    <!-- Página 4 (segundo regalo) -->
+    <div id="page4" class="page">
+        <h1>Tu segundo regalo es!</h1>
+        <h2>Una salida a comer panes chucos jsjsjsjssj</h2>
+        <img src="https://i.pinimg.com/736x/02/e7/e6/02e7e655fdfc21254d2bca4daa825a23.jpg">
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            var pages = document.getElementsByClassName("page");
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].style.display = "none";
+            }
+            document.getElementById(pageId).style.display = "block";
+        }
+
+        // Mostrar la primera página al cargar
+        showPage("page1");
+    </script>
+</body>
+</html>
